@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Page Not Found — Jean Paul Irakoze</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='16' fill='%230E1525'/><text x='50%25' y='68' text-anchor='middle' font-family='Georgia,serif' font-weight='900' font-size='52' fill='%2300E5FF'>JP</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Figtree:wght@400;500&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #F0F4FA; --surface: #FFFFFF; --border: #CBD5E8;
+      --primary: #0099BB; --text: #0F172A; --muted: #64748B;
+      --font-display: 'Syne', sans-serif;
+      --font-body: 'Figtree', sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+    html, body {
+      height: 100%; font-family: var(--font-body);
+      background: var(--bg); color: var(--text);
+    }
+    body {
+      display: flex; align-items: center; justify-content: center;
+      min-height: 100vh; padding: 24px;
+      background-image:
+        linear-gradient(var(--border) 1px, transparent 1px),
+        linear-gradient(90deg, var(--border) 1px, transparent 1px);
+      background-size: 60px 60px;
+    }
+    .card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 20px; padding: 60px 48px;
+      text-align: center; max-width: 480px; width: 100%;
+      position: relative; overflow: hidden;
+    }
+    .card::before {
+      content: ''; position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+      width: 200px; height: 2px;
+      background: linear-gradient(90deg, transparent, var(--primary), transparent);
+    }
+    .error-code {
+      font-family: var(--font-display); font-weight: 800;
+      font-size: 7rem; line-height: 1;
+      color: var(--primary); opacity: 0.12;
+      position: absolute; top: 20px; left: 50%; transform: translateX(-50%);
+      white-space: nowrap; user-select: none; pointer-events: none;
+    }
+    .label {
+      font-family: var(--font-mono); font-size: 0.72rem;
+      color: var(--primary); letter-spacing: 0.12em; text-transform: uppercase;
+      margin-bottom: 16px; position: relative;
+    }
+    h1 {
+      font-family: var(--font-display); font-weight: 800;
+      font-size: 2rem; letter-spacing: -0.03em;
+      color: var(--text); margin-bottom: 12px; position: relative;
+    }
+    p {
+      color: var(--muted); line-height: 1.7; margin-bottom: 32px;
+      position: relative;
+    }
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 12px 24px; border-radius: 999px;
+      font-family: var(--font-body); font-weight: 600; font-size: 0.9rem;
+      text-decoration: none; background: var(--primary); color: #fff;
+      transition: opacity 0.2s, transform 0.2s;
+    }
+    .btn:hover { opacity: 0.9; transform: translateY(-2px); }
+    .btn svg { width: 15px; height: 15px; }
+    .footer-note {
+      margin-top: 24px; font-family: var(--font-mono);
+      font-size: 0.68rem; color: var(--muted);
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="error-code" aria-hidden="true">404</div>
+    <p class="label">404 — not found</p>
+    <h1>Wrong turn.</h1>
+    <p>This page doesn't exist — but my portfolio does.<br>Let's get you back on track.</p>
+    <a href="./index.html" class="btn">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      Back to Portfolio
+    </a>
+    <p class="footer-note">Jean Paul Irakoze · jeaniakoze68@gmail.com</p>
+  </div>
+</body>
+</html>
