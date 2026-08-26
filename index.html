@@ -577,6 +577,54 @@
     .reveal-delay-2 { transition-delay: 0.2s; }
     .reveal-delay-3 { transition-delay: 0.3s; }
 
+    /* ─── Enhanced Motion ──────────────────────────────────────── */
+    /* Slow-drifting ambient background glows */
+    @keyframes drift1 { 0%, 100% { transform: translate(0, 0); } 50% { transform: translate(70px, 50px); } }
+    @keyframes drift2 { 0%, 100% { transform: translate(0, 0); } 50% { transform: translate(-60px, -45px); } }
+    .bg-glow-1 { animation: drift1 22s ease-in-out infinite; will-change: transform; }
+    .bg-glow-2 { animation: drift2 28s ease-in-out infinite; will-change: transform; }
+
+    /* Subtle parallax-pan on the background grid */
+    @keyframes gridPan { from { background-position: 0 0, 0 0; } to { background-position: 60px 60px, 60px 60px; } }
+    .bg-grid { animation: gridPan 60s linear infinite; }
+
+    /* Shimmering gradient sweep across accent words */
+    @keyframes shimmerText { 0%, 100% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } }
+    .section-title span {
+      background: linear-gradient(90deg, var(--primary), var(--secondary), var(--primary));
+      background-size: 200% auto;
+      -webkit-background-clip: text; background-clip: text;
+      -webkit-text-fill-color: transparent; color: transparent;
+      animation: shimmerText 6s ease-in-out infinite;
+    }
+
+    /* Gently floating hero photo with hover zoom */
+    @keyframes floaty { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-12px); } }
+    .hero-photo-wrap { animation: floaty 6s ease-in-out infinite; }
+    .hero-photo { transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1); }
+    .hero-photo-wrap:hover .hero-photo { transform: scale(1.05); }
+
+    /* Skill tags lift on hover */
+    .skill-tag:hover { transform: translateY(-3px); }
+
+    /* Light sweep across project cards on hover */
+    .project-card::after {
+      content: ''; position: absolute; top: 0; left: -130%;
+      width: 70%; height: 100%; z-index: 1; pointer-events: none;
+      background: linear-gradient(100deg, transparent, rgba(255,255,255,0.07), transparent);
+      transform: skewX(-18deg); transition: left 0.75s ease;
+    }
+    .project-card:hover::after { left: 160%; }
+
+    /* Animated underline on nav links */
+    .nav-links a { position: relative; }
+    .nav-links a::after {
+      content: ''; position: absolute; left: 14px; right: 14px; bottom: 2px;
+      height: 1.5px; background: var(--primary); border-radius: 2px;
+      transform: scaleX(0); transform-origin: left; transition: transform 0.3s ease;
+    }
+    .nav-links a:hover::after { transform: scaleX(1); }
+
     /* ─── Responsive ───────────────────────────────────────────── */
     @media (max-width: 768px) {
       .hero-inner { grid-template-columns: 1fr; }
@@ -1075,7 +1123,7 @@
         <div class="why-chip">Built under pressure</div>
         <h3>Two degrees, open source, real projects — simultaneously</h3>
         <p>
-          I'm completing dual degrees at two universities while contributing to
+          I have completed dual degrees at two universities while contributing to
           open-source at Wikimedia and building production projects. Pressure
           sharpens me. I prioritize ruthlessly, learn fast, and always deliver.
         </p>
@@ -1100,7 +1148,7 @@
       <div class="about-text reveal reveal-delay-1">
         <p>
           I'm <strong>Jean Paul Irakoze</strong>, a Software Engineer from Rwanda with a dual specialization
-          in <strong>Machine Learning</strong> and <strong>Software Systems</strong>. I study at the University of Rwanda
+          in <strong>Machine Learning</strong> and <strong>Software Systems</strong>. I studied at the University of Rwanda
           and African Leadership University simultaneously, bridging theory and real-world engineering.
         </p>
         <p>
@@ -1121,7 +1169,7 @@
           </div>
           <div class="stat-card">
             <div class="stat-num counter" data-target="2" data-suffix="">0</div>
-            <div class="stat-label">Degrees in progress</div>
+            <div class="stat-label">Degrees in Earned</div>
           </div>
           <div class="stat-card">
             <div class="stat-num">OSS</div>
@@ -1674,7 +1722,7 @@
               <div class="timeline-line"></div>
             </div>
             <div class="timeline-content">
-              <div class="timeline-date">2024 – Present</div>
+              <div class="timeline-date">2024 – 2025</div>
               <div class="timeline-org">Wikimedia Rwanda</div>
               <div class="timeline-role">Software Engineering Intern · Open Source</div>
               <div class="timeline-desc">
@@ -1730,7 +1778,7 @@
             <div>
               <div class="edu-school">African Leadership University</div>
               <div class="edu-degree">BSc Software Engineering<br><span style="color:var(--muted);">Specialization: Machine Learning</span></div>
-              <div class="edu-date">Expected March 2026</div>
+              <div class="edu-date">Jan 2023 - March 2026</div>
             </div>
           </div>
           <div class="edu-card" style="background:rgba(0,229,255,0.03);border-color:rgba(0,229,255,0.15);">
